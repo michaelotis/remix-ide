@@ -234,8 +234,10 @@ Please make a backup of your contracts and start using http://remix.ethereum.org
     }
   }
 
+  const blockchain = new Blockchain(registry.get('config').api)
+
   // APP_MANAGER
-  const appManager = new RemixAppManager({})
+  const appManager = new RemixAppManager(blockchain)
   const pluginLoader = appManager.pluginLoader
   const workspace = pluginLoader.get()
   const engine = new Engine(appManager)
@@ -262,7 +264,6 @@ Please make a backup of your contracts and start using http://remix.ethereum.org
   const fileManager = new FileManager(editor)
   registry.put({api: fileManager, name: 'filemanager'})
 
-  const blockchain = new Blockchain(registry.get('config').api)
   const pluginUdapp = new PluginUDapp(blockchain)
 
   // ----------------- compilation metadata generation servive ---------
