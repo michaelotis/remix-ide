@@ -90,7 +90,6 @@ DropdownPanel.prototype.update = function (_data, _header) {
   }
   this.message('')
   if (this.json) {
-
     this.treeView.update(_data)
   }
 }
@@ -124,7 +123,6 @@ DropdownPanel.prototype.render = function (overridestyle, node) {
       <div class="${css.name}" onclick=${function () { self.toggle() }} >${this.name}</div><span class="${css.nameDetail}" onclick=${function () { self.toggle() }} ></span>
       ${copyToClipboard(() => this.copyClipboard())}
     </div>` : yo`<div></div>`
-
 
   var view = yo`
     <div class="border rounded px-1 mt-1 bg-light">
